@@ -18,5 +18,5 @@ kubectl apply -f application.yaml
 
 ### Install ingress-nginx
 ````
-helm install sha-ingress ingress-nginx/ingress-nginx -f charts/ingress-values.yaml --namespace argocd
+helm install sha-nginx ingress-nginx/ingress-nginx -f charts/ingress-values.yaml --namespace argocd
 ````
