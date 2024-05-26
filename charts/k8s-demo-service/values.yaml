@@ -50,14 +50,17 @@ service:
 
 ingress:
   enabled: true
-  className: "sha-nginx"
+  className: "nginx"
   annotations:
-    kubernetes.io/ingress.class: "sha-nginx"
+    #kubernetes.io/ingress.class: "sha-nginx"
     # kubernetes.io/tls-acme: "true"
+    # Reference: https://kubernetes.github.io/ingress-nginx/examples/rewrite/
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
   hosts:
     - host: chart-example.local
       paths:
-        - path: /
+        - path: /my-test-app(/|$)(.*)
           pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
