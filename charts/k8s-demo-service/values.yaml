@@ -41,9 +41,9 @@ securityContext: {}
 
 service:
   type: NodePort
-  port: 8080
-  nodePort: 30475
-  #containerPort: 8080
+  port: 8081 # Sometimes your application inside container serves different services on a different port. health-check etc.
+  targetPort: 8080 # This is the actual port on which your application is running inside the container.
+  nodePort: 30475 # To access from outside, type <host_IP>:30475 in browser.
 
 ingress:
   enabled: false
