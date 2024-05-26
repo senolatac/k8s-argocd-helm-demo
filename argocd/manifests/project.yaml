@@ -12,6 +12,7 @@ spec:
   # Allow manifests to deploy only from specific Git repos
   sourceRepos:
     - "https://github.com/senolatac/k8s-argocd-helm-demo"
+    - "https://github.com/argoproj/argocd-example-apps"
 
   # Only permit applications to deploy to the prod namespace in the same cluster
   destinations:

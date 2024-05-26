@@ -25,3 +25,17 @@ metadata:
 stringData:
   type: git
   url: https://github.com/senolatac/sha-core
+---
+apiVersion: v1
+kind: Secret
+type: Opaque
+metadata:
+  name: "hello-repo"
+  namespace: "argocd"
+  annotations: {}
+  labels:
+    argocd.argoproj.io/secret-type: repository
+
+stringData:
+  type: git
+  url: https://github.com/argoproj/argocd-example-apps
