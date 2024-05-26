@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Secret
+type: Opaque
+metadata:
+  name: "argo-repo"
+  namespace: "argocd"
+  annotations: {}
+  labels:
+    argocd.argoproj.io/secret-type: repository
+
+stringData:
+  type: git
+  url: https://github.com/senolatac/k8s-argocd-helm-demo
+---
+apiVersion: v1
+kind: Secret
+type: Opaque
+metadata:
+  name: "sha-core-repo"
+  namespace: "argocd"
+  annotations: {}
+  labels:
+    argocd.argoproj.io/secret-type: repository
+
+stringData:
+  type: git
+  url: https://github.com/senolatac/sha-core

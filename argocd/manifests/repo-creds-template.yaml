@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: senolatac-github-creds
+  namespace: argocd
+  labels:
+    argocd.argoproj.io/secret-type: repo-creds
+stringData:
+  url: https://github.com/senolatac
+  type: helm
+  enableLfs: "true" # Enable git-lfs for this repository. Defaults to "false"
+  githubAppID: ""
+  githubAppInstallationID: ""
+  githubAppPrivateKey: |
+    -----BEGIN RSA PRIVATE KEY-----
+    -----END RSA PRIVATE KEY-----
+---
