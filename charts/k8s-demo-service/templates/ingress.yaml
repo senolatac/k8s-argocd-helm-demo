@@ -22,6 +22,13 @@ metadata:
   annotations:
     {{- toYaml . | nindent 4 }}
   {{- end }}
+data:
+  resource.customizations: |
+    Ingress:
+        health.lua: |
+          hs = {}
+          hs.status = "Healthy"
+          return hs
 spec:
   {{- if and .Values.ingress.className (semverCompare ">=1.18-0" .Capabilities.KubeVersion.GitVersion) }}
   ingressClassName: {{ .Values.ingress.className }}
@@ -59,10 +66,3 @@ spec:
           {{- end }}
     {{- end }}
 {{- end }}
-data:
-  resource.customizations: |
-    Ingress:
-        health.lua: |
-          hs = {}
-          hs.status = "Healthy"
-          return hs
