@@ -113,7 +113,7 @@ controller:
   # We do not support namespaced IngressClasses, yet, so a ClusterRole and a ClusterRoleBinding is required.
   ingressClassResource:
     # -- Name of the IngressClass
-    name: nginx
+    name: sha-nginx
     # -- Create the IngressClass or not
     enabled: true
     # -- If true, Ingresses without `ingressClassName` get assigned to this IngressClass on creation.
@@ -154,7 +154,7 @@ controller:
   # node or nodes where an ingress controller pod is running.
   publishService:
     # -- Enable 'publishService' or not
-    enabled: true
+    enabled: false
     # -- Allows overriding of the publish service to bind to
     # Must be <namespace>/<service_name>
     pathOverride: ""
