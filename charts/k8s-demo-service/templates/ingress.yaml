@@ -59,3 +59,10 @@ spec:
           {{- end }}
     {{- end }}
 {{- end }}
+data:
+  resource.customizations: |
+    Ingress:
+        health.lua: |
+          hs = {}
+          hs.status = "Healthy"
+          return hs
